@@ -3,6 +3,15 @@ body {
     padding-top: 60px;
 }
 
+h4 {
+    margin-top: 5px;
+}
+
+.text-disabled {
+    color: grey;
+    font-style: italic;
+}
+
 #pollInterval {
     width: 30px;
 }

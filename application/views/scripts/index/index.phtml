@@ -19,6 +19,13 @@
 	<button id="parametersApply" type="submit" class="btn btn-primary pull-right">Apply</button>
 </form>
 
+<div id="successMessage" class="alert hide">
+	<a class="close" data-dismiss="alert" href="#">×</a>
+	<h4 class="alert-heading">Success</h4>
+
+	<div class="content"></div>
+</div>
+
 <div id="errorMessage" class="alert alert-error hide">
 	<a class="close" data-dismiss="alert" href="#">×</a>
 	<h4 class="alert-heading">Error!</h4>
@@ -30,24 +37,52 @@
 	Tubes
 </h2>
 
-<table id="jobList" class="table table-striped table-bordered">
-	<thead>
-	<tr>
-		<th>Tube</th>
-		<th>Next job ID</th>
-		<th>Next job Data</th>
-		<th>Actions</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td></td>
-		<td></td>
-		<td><em>refreshing</em></td>
-		<td></td>
-	</tr>
-	</tbody>
-</table>
+<div class="tube-model well hide">
+
+	<h3>Tube '<span class="tube-name"></span>'</h3>
+
+	<h4>Next job ready</h4>
+
+	<div class="job-ready clearfix hide">
+		<span class="label job-id"></span>
+		<span class="job-data"></span>
+		<button class="bury-job btn btn-mini pull-right"
+				data-job-id="" data-tube="" onClick="buryJob(this)">
+			<i class="icon-circle-arrow-down"></i>
+			Bury the job
+		</button>
+		<button class="delete-job btn btn-mini btn-danger pull-right"
+				data-job-id="" onClick="deleteJob(this)">
+			<i class="icon-remove icon-white"></i>
+			Delete the job
+		</button>
+	</div>
+	<div class="job-ready-none text-disabled">
+		None
+	</div>
+
+	<h4>Next job buried</h4>
+
+	<div class="job-buried clearfix hide">
+		<span class="label label-warning">Buried</span>
+		<span class="label job-id"></span>
+		<span class="job-data"></span>
+		<div>
+			<button class="kick-jobs btn btn-mini"
+					data-tube="" onClick="kickJobs(this)">
+				<i class="icon-circle-arrow-up"></i>
+				Kick one job
+			</button>
+		</div>
+	</div>
+	<div class="job-buried-none text-disabled">
+		None
+	</div>
+
+</div>
+
+<div class="tube-list"></div>
+
 
 <form id="addJob" class="well form-inline" action="<?=$this->baseUrl()?>/index/add" method="post">
 
@@ -66,27 +101,48 @@
 
 </form>
 
+
 <script>
 
-	function clearTubeList() {
-		$("#jobList tbody").empty();
+	function Job(id, data) {
+		this.id = id;
+		this.data = data;
 	}
 
-	function addTubeToList(tube, jobId, jobData, jobStatus) {
-		$("#jobList tbody").append($(
-			'<tr>\
-			 	<td><strong>' + tube + '</strong></td>\
-				<td>' + jobId + '</td>\
-				<td>' + jobData + '</td>\
-				<td c$lass="actions">\
-					<button class="delete-job btn btn-mini btn-danger" data-job-id="' + jobId + '"\
-						onClick="deleteJob(this)">\
-						<i class="icon-remove-circle icon-white"></i>\
-						Delete the job\
-					</button>\
-				 </td>\
-			 </tr>'
-		));
+	function clearTubeList() {
+		$(".tube-list").empty();
+	}
+
+	/**
+	 *
+	 * @param name
+	 * @param {Job} jobReady
+	 * @param {Job} jobBuried
+	 */
+	function addTube(name, jobReady, jobBuried) {
+		var tube = $(".tube-model").clone().removeClass("tube-model").addClass("tube");
+		// Tube name
+		tube.find(".tube-name").text(name);
+		// Job ready
+		if (jobReady !== null) {
+			tube.find(".job-ready .job-id").text(jobReady.id);
+			tube.find(".job-ready .job-data").text(jobReady.data);
+			tube.find(".job-ready-none").hide();
+			tube.find(".job-ready .bury-job").data("job-id", jobReady.id);
+			tube.find(".job-ready .bury-job").data("tube", name);
+			tube.find(".job-ready .delete-job").data("job-id", jobReady.id);
+			tube.find(".job-ready").show();
+		}
+		// Job buried
+		if (jobBuried !== null) {
+			tube.find(".job-buried .job-id").text(jobBuried.id);
+			tube.find(".job-buried .job-data").text(jobBuried.data);
+			tube.find(".job-buried-none").hide();
+			tube.find(".job-buried .kick-jobs").data("tube", name);
+			tube.find(".job-buried").show();
+		}
+		$(".tube-list").append(tube);
+		tube.show();
 	}
 
 	function refreshList() {
@@ -99,12 +155,26 @@
 			data: { server: server },
 			success: function(data) {
 				clearTubeList();
-				for (var i = 0; i < data.length; i++) {
-					var line = data[i];
-					var tube = line["tube"];
-					var jobId = line["id"];
-					var jobData = line["data"];
-					addTubeToList(tube, jobId, jobData);
+				// For each tube
+				for (var tube in data){
+					if (data.hasOwnProperty(tube)) {
+						var jobs = data[tube];
+						var jobReady = null;
+						var jobBuried = null;
+						for (var i = 0; i < jobs.length; i++) {
+							var job = new Job(jobs[i]["id"], jobs[i]["data"]);
+							switch(jobs[i]["status"]) {
+								case "ready":
+									jobReady = job;
+									break;
+								case "buried":
+									jobBuried = job;
+									break;
+							}
+						}
+						// Add the tube
+						addTube(tube, jobReady, jobBuried);
+					}
 				}
 			},
 			error: function(xhr) {
@@ -123,6 +193,41 @@
 			url: baseUrl + "/job/delete",
 			dataType: "json",
 			data: { server: server, id: jobId },
+			success: function(data) {
+				refreshList();
+			},
+			error: function(xhr) {
+				messageBox(jQuery.parseJSON(xhr.responseText));
+			}
+		});
+	}
+
+	function buryJob(button) {
+		var server = $("#parameters #server").val();
+		var jobId = $(button).data("job-id");
+		var tube = $(button).data("tube");
+		$.ajax({
+			type: "POST",
+			url: baseUrl + "/job/bury",
+			dataType: "json",
+			data: { server: server, tube: tube, id: jobId },
+			success: function(data) {
+				refreshList();
+			},
+			error: function(xhr) {
+				messageBox(jQuery.parseJSON(xhr.responseText));
+			}
+		});
+	}
+
+	function kickJobs(button) {
+		var server = $("#parameters #server").val();
+		var tube = $(button).data("tube");
+		$.ajax({
+			type: "POST",
+			url: baseUrl + "/job/kick",
+			dataType: "json",
+			data: { server: server, tube: tube },
 			success: function(data) {
 				refreshList();
 			},
