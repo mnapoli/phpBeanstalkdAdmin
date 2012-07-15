@@ -1,0 +1,37 @@
+<div class="page-header" xmlns="http://www.w3.org/1999/html">
+	<h1>
+		Something wrong just happened
+	</h1>
+</div>
+
+<div class="alert alert-error">
+	<h4 class="alert-heading"><?=get_class($this->exception);?></h4>
+
+	<?=$this->exception->getMessage()?>
+</div>
+
+<p>
+	<button id="goBack" class="btn btn-primary">Go back</button>
+	<a href="<?=$this->baseUrl?>/" class="btn">Go to the home page</a>
+</p>
+
+<script>
+	$(function() {
+		$('#goBack').click(function(){
+			parent.history.back();
+		});
+	});
+</script>
+
+<h2>More information on the error:</h2>
+
+<h3>Error: <?=get_class($this->exception);?></h3>
+<p>
+	<b>Message:</b> <?=$this->exception->getMessage()?>
+</p>
+
+<h3>Trace:</h3>
+<pre><?=$this->exception->getTraceAsString()?></pre>
+
+<h3>HTTP request:</h3>
+<pre><?=var_export($this->request->getParams(), true)?></pre>
