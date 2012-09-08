@@ -14,8 +14,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
     get_include_path(),
 )));
 
-// Zend_Application
-require_once 'Zend/Application.php';
+require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 $application = new Zend_Application(
     APPLICATION_ENV,
