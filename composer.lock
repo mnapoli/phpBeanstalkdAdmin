@@ -1,0 +1,27 @@
+{
+    "hash": "d801b69417a08024b4cda3f762aa5612",
+    "packages": [
+        {
+            "package": "doctrine/common",
+            "version": "2.2.3"
+        },
+        {
+            "package": "mnapoli/php-di",
+            "version": "dev-master",
+            "source-reference": "3ba5c4c8c439f34f6db340bd91e6612bcd2028a1",
+            "commit-date": "1347059236"
+        },
+        {
+            "package": "zendframework/zendframework1",
+            "version": "1.12.0"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "mnapoli/php-di": 20
+    }
+}
