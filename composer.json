@@ -1,0 +1,7 @@
+{
+	"name": "mnapoli/phpbeanstalkdadmin",
+	"require": {
+		"mnapoli/php-di": "dev-master",
+		"zendframework/zendframework1": "1.12.*"
+	}
+}

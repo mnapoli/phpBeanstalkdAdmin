@@ -1,7 +1,20 @@
 <?php
 
+use DI\Annotations\Inject;
+
 class JobController extends Zend_Controller_Action
 {
+
+	/**
+	 * @Inject
+	 * @var Zend_Controller_Action_Helper_Json
+	 */
+	private $jsonHelper;
+
+	public function init() {
+		// Resolve dependencies
+		\DI\DependencyManager::getInstance()->resolveDependencies($this);
+	}
 
 	/**
 	 * Returns the list of the jobs in queue for the server
@@ -46,9 +59,8 @@ class JobController extends Zend_Controller_Action
 			$data = $e->getMessage();
 		}
 		// Send Json response
-		$jsonHelper = $this->getHelper('Json');
-		$jsonHelper->sendJson($data);
-		$jsonHelper->getResponse()->sendResponse();
+		$this->jsonHelper->sendJson($data);
+		$this->jsonHelper->getResponse()->sendResponse();
 	}
 
 	/**
@@ -75,9 +87,8 @@ class JobController extends Zend_Controller_Action
 			$response = $e->getMessage();
 		}
 		// Send Json response
-		$jsonHelper = $this->getHelper('Json');
-		$jsonHelper->sendJson($response);
-		$jsonHelper->getResponse()->sendResponse();
+		$this->jsonHelper->sendJson($response);
+		$this->jsonHelper->getResponse()->sendResponse();
 	}
 
 	/**
@@ -97,9 +108,8 @@ class JobController extends Zend_Controller_Action
 			$response = $e->getMessage();
 		}
 		// Send Json response
-		$jsonHelper = $this->getHelper('Json');
-		$jsonHelper->sendJson($response);
-		$jsonHelper->getResponse()->sendResponse();
+		$this->jsonHelper->sendJson($response);
+		$this->jsonHelper->getResponse()->sendResponse();
 	}
 
 	/**
@@ -135,6 +145,7 @@ class JobController extends Zend_Controller_Action
 					} else {
 						// Wrong job, un-reserve
 						$messageQueue->release($job);
+						$response = "There was a error while burying the job, try again.";
 					}
 				} else {
 					$this->getResponse()->setHttpResponseCode(500);
@@ -149,9 +160,8 @@ class JobController extends Zend_Controller_Action
 			$response = $e->getMessage();
 		}
 		// Send Json response
-		$jsonHelper = $this->getHelper('Json');
-		$jsonHelper->sendJson($response);
-		$jsonHelper->getResponse()->sendResponse();
+		$this->jsonHelper->sendJson($response);
+		$this->jsonHelper->getResponse()->sendResponse();
 	}
 
 	/**
@@ -175,9 +185,8 @@ class JobController extends Zend_Controller_Action
 			$response = $e->getMessage();
 		}
 		// Send Json response
-		$jsonHelper = $this->getHelper('Json');
-		$jsonHelper->sendJson($response);
-		$jsonHelper->getResponse()->sendResponse();
+		$this->jsonHelper->sendJson($response);
+		$this->jsonHelper->getResponse()->sendResponse();
 	}
 
 }
