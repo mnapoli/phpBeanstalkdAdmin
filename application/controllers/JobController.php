@@ -57,6 +57,9 @@ class JobController extends Zend_Controller_Action
 				}
 				$data[$tube] = $tubeArray;
 			}
+		} catch (Pheanstalk_Exception_ConnectionException $e) {
+			$this->getResponse()->setHttpResponseCode(400);
+			$data = "Unable to connect to '$server'";
 		} catch (Exception $e) {
 			$this->getResponse()->setHttpResponseCode(500);
 			$data = $e->getMessage();
