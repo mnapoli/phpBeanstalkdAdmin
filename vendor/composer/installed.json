@@ -27,34 +27,6 @@
         }
     },
     {
-        "name": "mnapoli/php-di",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "git://github.com/mnapoli/PHP-DI.git",
-            "reference": "3ba5c4c8c439f34f6db340bd91e6612bcd2028a1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://github.com/mnapoli/PHP-DI/zipball/3ba5c4c8c439f34f6db340bd91e6612bcd2028a1",
-            "reference": "3ba5c4c8c439f34f6db340bd91e6612bcd2028a1",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/common": "2.2.*"
-        },
-        "time": "2012-09-07 21:07:16",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "DI": "src/",
-                "TestFixtures": "tests/"
-            }
-        }
-    },
-    {
         "name": "zendframework/zendframework1",
         "version": "1.12.0",
         "version_normalized": "1.12.0.0",
@@ -90,5 +62,33 @@
         "include-path": [
             "library/"
         ]
+    },
+    {
+        "name": "mnapoli/php-di",
+        "version": "0.9.0",
+        "version_normalized": "0.9.0.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/mnapoli/PHP-DI.git",
+            "reference": "0.9.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/mnapoli/PHP-DI/zipball/0.9.0",
+            "reference": "0.9.0",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/common": "2.2.*"
+        },
+        "time": "2012-09-29 11:16:51",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "DI": "src/",
+                "DI\\Tests": "tests/"
+            }
+        }
     }
 ]
