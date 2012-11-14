@@ -7,7 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Zend' => $vendorDir . '/zendframework/zendframework1/library/',
-    'TestFixtures' => $vendorDir . '/mnapoli/php-di/tests/',
     'Doctrine\\Common' => $vendorDir . '/doctrine/common/lib/',
+    'DI\\Tests' => $vendorDir . '/mnapoli/php-di/tests/',
     'DI' => $vendorDir . '/mnapoli/php-di/src/',
 );
