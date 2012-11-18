@@ -20,12 +20,15 @@ class JobController extends Zend_Controller_Action
 	 * Returns the list of the jobs in queue for the server
 	 */
 	public function getListAction() {
-		$server = $this->_getParam("server");
-		$data = array ();
-		try {
-			// Connect to the server and get job list
-			$messageQueue = new Pheanstalk_Pheanstalk($server);
-			$tubes = $messageQueue->listTubes();
+	    $server = $this->_getParam("server");
+	    $exp=explode(":", $server);
+	    $server = (isset($exp[0]))?$exp[0]:"localhost";
+	    $port =  (isset($exp[1]))?$exp[1]:"11300";
+	    $data = array ();
+	    try {
+	        // Connect to the server and get job list
+	        $messageQueue = new Pheanstalk_Pheanstalk($server,$port);
+        	$tubes = $messageQueue->listTubes();
 			foreach ($tubes as $tube) {
 				$tubeArray = array();
 				// Next job ready
