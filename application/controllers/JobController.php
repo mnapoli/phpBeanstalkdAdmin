@@ -20,14 +20,10 @@ class JobController extends Zend_Controller_Action
 	 * Returns the list of the jobs in queue for the server
 	 */
 	public function getListAction() {
-	    $server = $this->_getParam("server");
-	    $exp=explode(":", $server);
-	    $server = (isset($exp[0]))?$exp[0]:"localhost";
-	    $port =  (isset($exp[1]))?$exp[1]:"11300";
 	    $data = array ();
 	    try {
 	        // Connect to the server and get job list
-	        $messageQueue = new Pheanstalk_Pheanstalk($server,$port);
+	        $messageQueue = $this->getServer();
         	$tubes = $messageQueue->listTubes();
 			foreach ($tubes as $tube) {
 				$tubeArray = array();
@@ -59,7 +55,7 @@ class JobController extends Zend_Controller_Action
 			}
 		} catch (Pheanstalk_Exception_ConnectionException $e) {
 			$this->getResponse()->setHttpResponseCode(400);
-			$data = "Unable to connect to '$server'";
+			$data = "Unable to connect to the Beanstalkd server";
 		} catch (Exception $e) {
 			$this->getResponse()->setHttpResponseCode(500);
 			$data = $e->getMessage();
@@ -73,7 +69,6 @@ class JobController extends Zend_Controller_Action
 	 * Add a job in the server queue
 	 */
 	public function addAction() {
-		$server = $this->_getParam("server");
 		$data = $this->_getParam("data");
 		$tube = $this->_getParam("tube");
 		try {
@@ -84,7 +79,7 @@ class JobController extends Zend_Controller_Action
 				throw new Exception("The tube field must not be empty");
 			}
 			// Connect to the server
-			$messageQueue = new Pheanstalk_Pheanstalk($server);
+			$messageQueue = $this->getServer();
 			$messageQueue->useTube($tube);
 			$messageQueue->put($data);
 			$response = "";
@@ -101,11 +96,10 @@ class JobController extends Zend_Controller_Action
 	 * Delete a job
 	 */
 	public function deleteAction() {
-		$server = $this->_getParam("server");
 		$jobId = $this->_getParam("id");
 		try {
 			// Connect to the server
-			$messageQueue = new Pheanstalk_Pheanstalk($server);
+			$messageQueue = $this->getServer();
 			$job = $messageQueue->peek($jobId);
 			$messageQueue->delete($job);
 			$response = "";
@@ -122,12 +116,11 @@ class JobController extends Zend_Controller_Action
 	 * Bury a job
 	 */
 	public function buryAction() {
-		$server = $this->_getParam("server");
 		$tube = $this->_getParam("tube");
 		$jobId = $this->_getParam("id");
 		try {
 			// Connect to the server
-			$messageQueue = new Pheanstalk_Pheanstalk($server);
+			$messageQueue = $this->getServer();
 			// Check if the next job in the queue is still the same job
 			$stillExists = false;
 			try {
@@ -177,12 +170,11 @@ class JobController extends Zend_Controller_Action
 	 * - count : number of jobs to kick
 	 */
 	public function kickAction() {
-		$server = $this->_getParam("server");
 		$tube = $this->_getParam("tube");
 		$count = $this->_getParam("count", 1);
 		try {
 			// Connect to the server
-			$messageQueue = new Pheanstalk_Pheanstalk($server);
+			$messageQueue = $this->getServer();
 			$messageQueue->useTube($tube);
 			$messageQueue->kick($count);
 			$response = "";
@@ -193,6 +185,17 @@ class JobController extends Zend_Controller_Action
 		// Send Json response
 		$this->jsonHelper->sendJson($response);
 		$this->jsonHelper->getResponse()->sendResponse();
+	}
+
+	/**
+	 * @return Pheanstalk_Pheanstalk
+	 */
+	private function getServer() {
+		$server = $this->_getParam("server");
+		$exp = explode(":", $server);
+		$server = isset($exp[0]) ? $exp[0] : "localhost";
+		$port = isset($exp[1])?$exp[1]:"11300";
+		return new Pheanstalk_Pheanstalk($server, $port);
 	}
 
 }
