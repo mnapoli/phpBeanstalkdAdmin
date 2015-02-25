@@ -10,9 +10,11 @@ RewriteRule ^.*$ index.php [NC,L]
 Options -Indexes
 
 # PHP config
-php_flag magic_quotes_gpc off
-php_flag register_globals off
-php_flag short_open_tag on
+<IfModule mod_php5.c>
+    php_flag magic_quotes_gpc off
+    php_flag register_globals off
+    php_flag short_open_tag on
+</IfModule>
 
 # Apache 2 gzip
 SetOutputFilter DEFLATE
