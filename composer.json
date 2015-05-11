@@ -1,7 +1,26 @@
 {
 	"name": "mnapoli/phpbeanstalkdadmin",
+    "type": "project",
+    "description": "Beanstalkd administration and monitoring interface",
+    "license": "MIT",
+    "keywords": ["beanstalkd"],
+    "homepage": "http://mnapoli.github.com/phpBeanstalkdAdmin/",
+    "authors": [
+        {
+            "name": "Matthieu Napoli"
+        },
+        {
+            "name": "Márk Sági-Kazár",
+            "email": "mark.sagikazar@gmail.com"
+        }
+    ],
 	"require": {
 		"mnapoli/php-di": "0.9.*",
 		"zendframework/zendframework1": "1.12.*"
-	}
+	},
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    },
 }
