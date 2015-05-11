@@ -1,0 +1,171 @@
+{
+    "version": "1.0",
+    "name": "mnapoli/phpbeanstalkdadmin",
+    "path-mappings": {
+        "/app/assets/css/bootstrap.css.map": "@twbs/bootstrap:dist/css/bootstrap.css.map",
+        "/app/assets/css/bootstrap.min.css": "@twbs/bootstrap:dist/css/bootstrap.min.css",
+        "/app/assets/fonts": "@twbs/bootstrap:dist/fonts",
+        "/app/assets/js/bootstrap.min.js": "@twbs/bootstrap:dist/js/bootstrap.min.js",
+        "/app/assets/js/jquery.min.js": "@twbs/bootstrap:dist/js/jquery.min.js"
+    },
+    "bindings": {
+        "b801bc85-6092-4097-acde-f5cca2049f85": {
+            "query": "/app/assets{,/**/*}",
+            "type": "puli/asset",
+            "parameters": {
+                "path": "/",
+                "target": "default"
+            }
+        }
+    },
+    "plugins": [
+        "Puli\\AssetPlugin\\Api\\AssetPlugin"
+    ],
+    "extra": {
+        "install-targets": {
+            "assets": {
+                "installer": "symlink",
+                "location": "public/assets",
+                "default": true
+            }
+        }
+    },
+    "packages": {
+        "alexbilbie/proton": {
+            "install-path": "vendor/alexbilbie/proton",
+            "installer": "composer"
+        },
+        "justinrainbow/json-schema": {
+            "install-path": "vendor/justinrainbow/json-schema",
+            "installer": "composer"
+        },
+        "league/container": {
+            "install-path": "vendor/league/container",
+            "installer": "composer"
+        },
+        "league/event": {
+            "install-path": "vendor/league/event",
+            "installer": "composer"
+        },
+        "league/route": {
+            "install-path": "vendor/league/route",
+            "installer": "composer"
+        },
+        "monolog/monolog": {
+            "install-path": "vendor/monolog/monolog",
+            "installer": "composer"
+        },
+        "nikic/fast-route": {
+            "install-path": "vendor/nikic/fast-route",
+            "installer": "composer"
+        },
+        "pda/pheanstalk": {
+            "install-path": "vendor/pda/pheanstalk",
+            "installer": "composer"
+        },
+        "psr/log": {
+            "install-path": "vendor/psr/log",
+            "installer": "composer"
+        },
+        "puli/asset-plugin": {
+            "install-path": "vendor/puli/asset-plugin",
+            "installer": "composer"
+        },
+        "puli/cli": {
+            "install-path": "vendor/puli/cli",
+            "installer": "composer"
+        },
+        "puli/composer-plugin": {
+            "install-path": "vendor/puli/composer-plugin",
+            "installer": "composer"
+        },
+        "puli/discovery": {
+            "install-path": "vendor/puli/discovery",
+            "installer": "composer"
+        },
+        "puli/factory": {
+            "install-path": "vendor/puli/factory",
+            "installer": "composer"
+        },
+        "puli/manager": {
+            "install-path": "vendor/puli/manager",
+            "installer": "composer"
+        },
+        "puli/repository": {
+            "install-path": "vendor/puli/repository",
+            "installer": "composer"
+        },
+        "rhumsaa/uuid": {
+            "install-path": "vendor/rhumsaa/uuid",
+            "installer": "composer"
+        },
+        "seld/jsonlint": {
+            "install-path": "vendor/seld/jsonlint",
+            "installer": "composer"
+        },
+        "symfony/console": {
+            "install-path": "vendor/symfony/console/Symfony/Component/Console",
+            "installer": "composer"
+        },
+        "symfony/debug": {
+            "install-path": "vendor/symfony/debug/Symfony/Component/Debug",
+            "installer": "composer"
+        },
+        "symfony/event-dispatcher": {
+            "install-path": "vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher",
+            "installer": "composer"
+        },
+        "symfony/filesystem": {
+            "install-path": "vendor/symfony/filesystem/Symfony/Component/Filesystem",
+            "installer": "composer"
+        },
+        "symfony/http-foundation": {
+            "install-path": "vendor/symfony/http-foundation/Symfony/Component/HttpFoundation",
+            "installer": "composer"
+        },
+        "symfony/http-kernel": {
+            "install-path": "vendor/symfony/http-kernel/Symfony/Component/HttpKernel",
+            "installer": "composer"
+        },
+        "symfony/process": {
+            "install-path": "vendor/symfony/process/Symfony/Component/Process",
+            "installer": "composer"
+        },
+        "twbs/bootstrap": {
+            "install-path": "vendor/twbs/bootstrap",
+            "installer": "composer"
+        },
+        "twig/twig": {
+            "install-path": "vendor/twig/twig",
+            "installer": "composer"
+        },
+        "webmozart/assert": {
+            "install-path": "vendor/webmozart/assert",
+            "installer": "composer"
+        },
+        "webmozart/console": {
+            "install-path": "vendor/webmozart/console",
+            "installer": "composer"
+        },
+        "webmozart/expression": {
+            "install-path": "vendor/webmozart/expression",
+            "installer": "composer"
+        },
+        "webmozart/glob": {
+            "install-path": "vendor/webmozart/glob",
+            "installer": "composer"
+        },
+        "webmozart/json": {
+            "install-path": "vendor/webmozart/json",
+            "installer": "composer"
+        },
+        "webmozart/key-value-store": {
+            "install-path": "vendor/webmozart/key-value-store",
+            "installer": "composer"
+        },
+        "webmozart/path-util": {
+            "install-path": "vendor/webmozart/path-util",
+            "installer": "composer"
+        }
+    }
+}

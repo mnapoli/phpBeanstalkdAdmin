@@ -17,9 +17,9 @@
     "require": {
         "php": ">=5.4",
         "alexbilbie/proton": "~1.1",
-        "codegyre/robo": "^0.5",
-        "components/jquery": "^2.1",
         "pda/pheanstalk": "~3.0",
+        "puli/asset-plugin":"~1.0",
+        "puli/cli": "~1.0",
         "twbs/bootstrap": "~3.3",
         "twig/twig": "~1.0"
     },
@@ -27,5 +27,7 @@
         "branch-alias": {
             "dev-master": "2.0-dev"
         }
-    }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "beta"
 }
