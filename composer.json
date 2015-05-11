@@ -1,5 +1,5 @@
 {
-	"name": "mnapoli/phpbeanstalkdadmin",
+    "name": "mnapoli/phpbeanstalkdadmin",
     "type": "project",
     "description": "Beanstalkd administration and monitoring interface",
     "license": "MIT",
@@ -14,13 +14,18 @@
             "email": "mark.sagikazar@gmail.com"
         }
     ],
-	"require": {
-		"mnapoli/php-di": "0.9.*",
-		"zendframework/zendframework1": "1.12.*"
-	},
+    "require": {
+        "php": ">=5.4",
+        "alexbilbie/proton": "~1.1",
+        "codegyre/robo": "^0.5",
+        "components/jquery": "^2.1",
+        "pda/pheanstalk": "~3.0",
+        "twbs/bootstrap": "~3.3",
+        "twig/twig": "~1.0"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "2.0-dev"
         }
-    },
+    }
 }
