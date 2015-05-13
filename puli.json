@@ -2,18 +2,28 @@
     "version": "1.0",
     "name": "mnapoli/phpbeanstalkdadmin",
     "path-mappings": {
-        "/app/assets/css/bootstrap.css.map": "@twbs/bootstrap:dist/css/bootstrap.css.map",
-        "/app/assets/css/bootstrap.min.css": "@twbs/bootstrap:dist/css/bootstrap.min.css",
-        "/app/assets/fonts": "@twbs/bootstrap:dist/fonts",
-        "/app/assets/js/bootstrap.min.js": "@twbs/bootstrap:dist/js/bootstrap.min.js",
-        "/app/assets/js/jquery.min.js": "@twbs/bootstrap:dist/js/jquery.min.js"
+        "/app": "app/",
+        "/vendor/css/bootstrap.min.css": "@twbs/bootstrap:dist/css/bootstrap.min.css",
+        "/vendor/fonts": "@twbs/bootstrap:dist/fonts/",
+        "/vendor/js/angular-resource.min.js": "@components/angular.js:/angular-resource.min.js",
+        "/vendor/js/angular.min.js": "@components/angular.js:/angular.min.js",
+        "/vendor/js/bootstrap.min.js": "@twbs/bootstrap:dist/js/bootstrap.min.js",
+        "/vendor/js/jquery.min.js": "@components/jquery:jquery.min.js"
     },
     "bindings": {
-        "b801bc85-6092-4097-acde-f5cca2049f85": {
+        "9b174165-2d42-413f-81aa-f491403325aa": {
             "query": "/app/assets{,/**/*}",
             "type": "puli/asset",
             "parameters": {
-                "path": "/",
+                "path": "/assets",
+                "target": "default"
+            }
+        },
+        "3c87dc0b-eb3a-4181-8e0d-d0ac7caeed67": {
+            "query": "/vendor{,/**/*}",
+            "type": "puli/asset",
+            "parameters": {
+                "path": "/vendor",
                 "target": "default"
             }
         }
@@ -23,16 +33,28 @@
     ],
     "extra": {
         "install-targets": {
-            "assets": {
+            "dev": {
                 "installer": "symlink",
-                "location": "public/assets",
+                "location": "public",
                 "default": true
+            },
+            "prod": {
+                "installer": "copy",
+                "location": "public"
             }
         }
     },
     "packages": {
         "alexbilbie/proton": {
             "install-path": "vendor/alexbilbie/proton",
+            "installer": "composer"
+        },
+        "components/angular.js": {
+            "install-path": "vendor/components/angular.js",
+            "installer": "composer"
+        },
+        "components/jquery": {
+            "install-path": "vendor/components/jquery",
             "installer": "composer"
         },
         "justinrainbow/json-schema": {
@@ -93,6 +115,10 @@
         },
         "puli/repository": {
             "install-path": "vendor/puli/repository",
+            "installer": "composer"
+        },
+        "puli/twig-extension": {
+            "install-path": "vendor/puli/twig-extension",
             "installer": "composer"
         },
         "rhumsaa/uuid": {

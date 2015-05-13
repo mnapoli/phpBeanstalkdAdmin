@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "79b0a39015efd15eb6560ba6f6ac149f",
+    "hash": "3615cd40d46b894127db3f2e164b2119",
     "packages": [
         {
             "name": "alexbilbie/proton",
@@ -63,6 +63,352 @@
                 "proton"
             ],
             "time": "2015-03-26 17:35:31"
+        },
+        {
+            "name": "components/angular.js",
+            "version": "1.3.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/angular.js.git",
+                "reference": "24c4d13fc1816155f616361432c192350811482b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/angular.js/zipball/24c4d13fc1816155f616361432c192350811482b",
+                "reference": "24c4d13fc1816155f616361432c192350811482b",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "name": "angularjs",
+                    "scripts": [
+                        "angular.js"
+                    ],
+                    "files": [
+                        "angular-animate.js",
+                        "angular-animate.min.js",
+                        "angular-animate.min.js.map",
+                        "angular-cookies.js",
+                        "angular-cookies.min.js",
+                        "angular-cookies.min.js.map",
+                        "angular-csp.css",
+                        "angular-loader.js",
+                        "angular-loader.min.js",
+                        "angular-loader.min.js.map",
+                        "angular-mocks.js",
+                        "angular-resource.js",
+                        "angular-resource.min.js",
+                        "angular-resource.min.js.map",
+                        "angular-route.js",
+                        "angular-route.min.js",
+                        "angular-route.min.js.map",
+                        "angular-sanitize.js",
+                        "angular-sanitize.min.js",
+                        "angular-sanitize.min.js.map",
+                        "angular-scenario.js",
+                        "angular-touch.js",
+                        "angular-touch.min.js",
+                        "angular-touch.min.js.map",
+                        "angular.min.js",
+                        "angular.min.js.map",
+                        "i18n/angular-locale_af-na.js",
+                        "i18n/angular-locale_af-za.js",
+                        "i18n/angular-locale_af.js",
+                        "i18n/angular-locale_am-et.js",
+                        "i18n/angular-locale_am.js",
+                        "i18n/angular-locale_ar-001.js",
+                        "i18n/angular-locale_ar-ae.js",
+                        "i18n/angular-locale_ar-bh.js",
+                        "i18n/angular-locale_ar-dz.js",
+                        "i18n/angular-locale_ar-eg.js",
+                        "i18n/angular-locale_ar-iq.js",
+                        "i18n/angular-locale_ar-jo.js",
+                        "i18n/angular-locale_ar-kw.js",
+                        "i18n/angular-locale_ar-lb.js",
+                        "i18n/angular-locale_ar-ly.js",
+                        "i18n/angular-locale_ar-ma.js",
+                        "i18n/angular-locale_ar-om.js",
+                        "i18n/angular-locale_ar-qa.js",
+                        "i18n/angular-locale_ar-sa.js",
+                        "i18n/angular-locale_ar-sd.js",
+                        "i18n/angular-locale_ar-sy.js",
+                        "i18n/angular-locale_ar-tn.js",
+                        "i18n/angular-locale_ar-ye.js",
+                        "i18n/angular-locale_ar.js",
+                        "i18n/angular-locale_bg-bg.js",
+                        "i18n/angular-locale_bg.js",
+                        "i18n/angular-locale_bn-bd.js",
+                        "i18n/angular-locale_bn-in.js",
+                        "i18n/angular-locale_bn.js",
+                        "i18n/angular-locale_ca-ad.js",
+                        "i18n/angular-locale_ca-es.js",
+                        "i18n/angular-locale_ca.js",
+                        "i18n/angular-locale_cs-cz.js",
+                        "i18n/angular-locale_cs.js",
+                        "i18n/angular-locale_da-dk.js",
+                        "i18n/angular-locale_da.js",
+                        "i18n/angular-locale_de-at.js",
+                        "i18n/angular-locale_de-be.js",
+                        "i18n/angular-locale_de-ch.js",
+                        "i18n/angular-locale_de-de.js",
+                        "i18n/angular-locale_de-li.js",
+                        "i18n/angular-locale_de-lu.js",
+                        "i18n/angular-locale_de.js",
+                        "i18n/angular-locale_el-cy.js",
+                        "i18n/angular-locale_el-gr.js",
+                        "i18n/angular-locale_el.js",
+                        "i18n/angular-locale_en-as.js",
+                        "i18n/angular-locale_en-au.js",
+                        "i18n/angular-locale_en-bb.js",
+                        "i18n/angular-locale_en-be.js",
+                        "i18n/angular-locale_en-bm.js",
+                        "i18n/angular-locale_en-bw.js",
+                        "i18n/angular-locale_en-bz.js",
+                        "i18n/angular-locale_en-ca.js",
+                        "i18n/angular-locale_en-dsrt-us.js",
+                        "i18n/angular-locale_en-dsrt.js",
+                        "i18n/angular-locale_en-fm.js",
+                        "i18n/angular-locale_en-gb.js",
+                        "i18n/angular-locale_en-gu.js",
+                        "i18n/angular-locale_en-gy.js",
+                        "i18n/angular-locale_en-hk.js",
+                        "i18n/angular-locale_en-ie.js",
+                        "i18n/angular-locale_en-in.js",
+                        "i18n/angular-locale_en-iso.js",
+                        "i18n/angular-locale_en-jm.js",
+                        "i18n/angular-locale_en-mh.js",
+                        "i18n/angular-locale_en-mp.js",
+                        "i18n/angular-locale_en-mt.js",
+                        "i18n/angular-locale_en-mu.js",
+                        "i18n/angular-locale_en-na.js",
+                        "i18n/angular-locale_en-nz.js",
+                        "i18n/angular-locale_en-ph.js",
+                        "i18n/angular-locale_en-pk.js",
+                        "i18n/angular-locale_en-pr.js",
+                        "i18n/angular-locale_en-pw.js",
+                        "i18n/angular-locale_en-sg.js",
+                        "i18n/angular-locale_en-tc.js",
+                        "i18n/angular-locale_en-tt.js",
+                        "i18n/angular-locale_en-um.js",
+                        "i18n/angular-locale_en-us.js",
+                        "i18n/angular-locale_en-vg.js",
+                        "i18n/angular-locale_en-vi.js",
+                        "i18n/angular-locale_en-za.js",
+                        "i18n/angular-locale_en-zw.js",
+                        "i18n/angular-locale_en.js",
+                        "i18n/angular-locale_es-419.js",
+                        "i18n/angular-locale_es-ar.js",
+                        "i18n/angular-locale_es-bo.js",
+                        "i18n/angular-locale_es-cl.js",
+                        "i18n/angular-locale_es-co.js",
+                        "i18n/angular-locale_es-cr.js",
+                        "i18n/angular-locale_es-do.js",
+                        "i18n/angular-locale_es-ea.js",
+                        "i18n/angular-locale_es-ec.js",
+                        "i18n/angular-locale_es-es.js",
+                        "i18n/angular-locale_es-gq.js",
+                        "i18n/angular-locale_es-gt.js",
+                        "i18n/angular-locale_es-hn.js",
+                        "i18n/angular-locale_es-ic.js",
+                        "i18n/angular-locale_es-mx.js",
+                        "i18n/angular-locale_es-ni.js",
+                        "i18n/angular-locale_es-pa.js",
+                        "i18n/angular-locale_es-pe.js",
+                        "i18n/angular-locale_es-pr.js",
+                        "i18n/angular-locale_es-py.js",
+                        "i18n/angular-locale_es-sv.js",
+                        "i18n/angular-locale_es-us.js",
+                        "i18n/angular-locale_es-uy.js",
+                        "i18n/angular-locale_es-ve.js",
+                        "i18n/angular-locale_es.js",
+                        "i18n/angular-locale_et-ee.js",
+                        "i18n/angular-locale_et.js",
+                        "i18n/angular-locale_eu-es.js",
+                        "i18n/angular-locale_eu.js",
+                        "i18n/angular-locale_fa-af.js",
+                        "i18n/angular-locale_fa-ir.js",
+                        "i18n/angular-locale_fa.js",
+                        "i18n/angular-locale_fi-fi.js",
+                        "i18n/angular-locale_fi.js",
+                        "i18n/angular-locale_fil-ph.js",
+                        "i18n/angular-locale_fil.js",
+                        "i18n/angular-locale_fr-be.js",
+                        "i18n/angular-locale_fr-bf.js",
+                        "i18n/angular-locale_fr-bi.js",
+                        "i18n/angular-locale_fr-bj.js",
+                        "i18n/angular-locale_fr-bl.js",
+                        "i18n/angular-locale_fr-ca.js",
+                        "i18n/angular-locale_fr-cd.js",
+                        "i18n/angular-locale_fr-cf.js",
+                        "i18n/angular-locale_fr-cg.js",
+                        "i18n/angular-locale_fr-ch.js",
+                        "i18n/angular-locale_fr-ci.js",
+                        "i18n/angular-locale_fr-cm.js",
+                        "i18n/angular-locale_fr-dj.js",
+                        "i18n/angular-locale_fr-fr.js",
+                        "i18n/angular-locale_fr-ga.js",
+                        "i18n/angular-locale_fr-gf.js",
+                        "i18n/angular-locale_fr-gn.js",
+                        "i18n/angular-locale_fr-gp.js",
+                        "i18n/angular-locale_fr-gq.js",
+                        "i18n/angular-locale_fr-km.js",
+                        "i18n/angular-locale_fr-lu.js",
+                        "i18n/angular-locale_fr-mc.js",
+                        "i18n/angular-locale_fr-mf.js",
+                        "i18n/angular-locale_fr-mg.js",
+                        "i18n/angular-locale_fr-ml.js",
+                        "i18n/angular-locale_fr-mq.js",
+                        "i18n/angular-locale_fr-ne.js",
+                        "i18n/angular-locale_fr-re.js",
+                        "i18n/angular-locale_fr-yt.js",
+                        "i18n/angular-locale_fr.js",
+                        "i18n/angular-locale_gl-es.js",
+                        "i18n/angular-locale_gl.js",
+                        "i18n/angular-locale_gsw-ch.js",
+                        "i18n/angular-locale_gsw.js",
+                        "i18n/angular-locale_gu-in.js",
+                        "i18n/angular-locale_gu.js",
+                        "i18n/angular-locale_he-il.js",
+                        "i18n/angular-locale_he.js",
+                        "i18n/angular-locale_hi-in.js",
+                        "i18n/angular-locale_hi.js",
+                        "i18n/angular-locale_hr-hr.js",
+                        "i18n/angular-locale_hr.js",
+                        "i18n/angular-locale_hu-hu.js",
+                        "i18n/angular-locale_hu.js",
+                        "i18n/angular-locale_id-id.js",
+                        "i18n/angular-locale_id.js",
+                        "i18n/angular-locale_in.js",
+                        "i18n/angular-locale_is-is.js",
+                        "i18n/angular-locale_is.js",
+                        "i18n/angular-locale_it-it.js",
+                        "i18n/angular-locale_it-sm.js",
+                        "i18n/angular-locale_it.js",
+                        "i18n/angular-locale_iw.js",
+                        "i18n/angular-locale_ja-jp.js",
+                        "i18n/angular-locale_ja.js",
+                        "i18n/angular-locale_kn-in.js",
+                        "i18n/angular-locale_kn.js",
+                        "i18n/angular-locale_ko-kr.js",
+                        "i18n/angular-locale_ko.js",
+                        "i18n/angular-locale_ln-cd.js",
+                        "i18n/angular-locale_ln.js",
+                        "i18n/angular-locale_lt-lt.js",
+                        "i18n/angular-locale_lt.js",
+                        "i18n/angular-locale_lv-lv.js",
+                        "i18n/angular-locale_lv.js",
+                        "i18n/angular-locale_ml-in.js",
+                        "i18n/angular-locale_ml.js",
+                        "i18n/angular-locale_mr-in.js",
+                        "i18n/angular-locale_mr.js",
+                        "i18n/angular-locale_ms-my.js",
+                        "i18n/angular-locale_ms.js",
+                        "i18n/angular-locale_mt-mt.js",
+                        "i18n/angular-locale_mt.js",
+                        "i18n/angular-locale_nl-cw.js",
+                        "i18n/angular-locale_nl-nl.js",
+                        "i18n/angular-locale_nl-sx.js",
+                        "i18n/angular-locale_nl.js",
+                        "i18n/angular-locale_no.js",
+                        "i18n/angular-locale_or-in.js",
+                        "i18n/angular-locale_or.js",
+                        "i18n/angular-locale_pl-pl.js",
+                        "i18n/angular-locale_pl.js",
+                        "i18n/angular-locale_pt-br.js",
+                        "i18n/angular-locale_pt-pt.js",
+                        "i18n/angular-locale_pt.js",
+                        "i18n/angular-locale_ro-ro.js",
+                        "i18n/angular-locale_ro.js",
+                        "i18n/angular-locale_ru-ru.js",
+                        "i18n/angular-locale_ru.js",
+                        "i18n/angular-locale_sk-sk.js",
+                        "i18n/angular-locale_sk.js",
+                        "i18n/angular-locale_sl-si.js",
+                        "i18n/angular-locale_sl.js",
+                        "i18n/angular-locale_sq-al.js",
+                        "i18n/angular-locale_sq.js",
+                        "i18n/angular-locale_sr-cyrl-rs.js",
+                        "i18n/angular-locale_sr-latn-rs.js",
+                        "i18n/angular-locale_sr.js",
+                        "i18n/angular-locale_sv-se.js",
+                        "i18n/angular-locale_sv.js",
+                        "i18n/angular-locale_sw-tz.js",
+                        "i18n/angular-locale_sw.js",
+                        "i18n/angular-locale_ta-in.js",
+                        "i18n/angular-locale_ta.js",
+                        "i18n/angular-locale_te-in.js",
+                        "i18n/angular-locale_te.js",
+                        "i18n/angular-locale_th-th.js",
+                        "i18n/angular-locale_th.js",
+                        "i18n/angular-locale_tl.js",
+                        "i18n/angular-locale_tr-tr.js",
+                        "i18n/angular-locale_tr.js",
+                        "i18n/angular-locale_uk-ua.js",
+                        "i18n/angular-locale_uk.js",
+                        "i18n/angular-locale_ur-pk.js",
+                        "i18n/angular-locale_ur.js",
+                        "i18n/angular-locale_vi-vn.js",
+                        "i18n/angular-locale_vi.js",
+                        "i18n/angular-locale_zh-cn.js",
+                        "i18n/angular-locale_zh-hans-cn.js",
+                        "i18n/angular-locale_zh-hk.js",
+                        "i18n/angular-locale_zh-tw.js",
+                        "i18n/angular-locale_zh.js",
+                        "i18n/angular-locale_zu-za.js",
+                        "i18n/angular-locale_zu.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Shim repository for Angular.js",
+            "homepage": "http://angularjs.org",
+            "time": "2015-02-12 13:30:43"
+        },
+        {
+            "name": "components/jquery",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "7b1d1104656a092423fbfba13c5920e9bbba290c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/7b1d1104656a092423fbfba13c5920e9bbba290c",
+                "reference": "7b1d1104656a092423fbfba13c5920e9bbba290c",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery-migrate.js",
+                        "jquery-migrate.min.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Resig",
+                    "email": "jeresig@gmail.com"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2015-05-08 05:04:47"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -863,6 +1209,58 @@
             "time": "2015-04-13 14:54:51"
         },
         {
+            "name": "puli/twig-extension",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/puli/twig-extension.git",
+                "reference": "dd4b20f886b5ada0dc5c1612daaacaa9d0776be2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/puli/twig-extension/zipball/dd4b20f886b5ada0dc5c1612daaacaa9d0776be2",
+                "reference": "dd4b20f886b5ada0dc5c1612daaacaa9d0776be2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "puli/repository": "~1.0",
+                "twig/twig": "~1.0",
+                "webmozart/path-util": "~1.0"
+            },
+            "require-dev": {
+                "puli/asset-plugin": "~1.0",
+                "symfony/http-kernel": "~2.3"
+            },
+            "suggest": {
+                "puli/asset-plugin": "Enables the asset_url() function"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Puli\\TwigExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "A Puli extension for the Twig templating system.",
+            "homepage": "http://puli.io",
+            "time": "2015-04-13 15:27:36"
+        },
+        {
             "name": "rhumsaa/uuid",
             "version": "2.8.0",
             "source": {
@@ -1495,20 +1893,20 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.0.0-beta",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "e0014a40f6a152293ee63d97b59d52e78ce7e098"
+                "reference": "b8ef76d0f0c3b9a0a1bc987085fe0a0ddba984ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/e0014a40f6a152293ee63d97b59d52e78ce7e098",
-                "reference": "e0014a40f6a152293ee63d97b59d52e78ce7e098",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/b8ef76d0f0c3b9a0a1bc987085fe0a0ddba984ab",
+                "reference": "b8ef76d0f0c3b9a0a1bc987085fe0a0ddba984ab",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.3.3"
             },
             "type": "library",
             "extra": {
@@ -1531,13 +1929,13 @@
                     "email": "bschussek@gmail.com"
                 }
             ],
-            "description": "Efficient assertions to validate the input/output of your methods.",
+            "description": "Assertions to validate method input/output with nice error messages.",
             "keywords": [
                 "assert",
                 "check",
                 "validate"
             ],
-            "time": "2015-03-19 11:05:13"
+            "time": "2015-05-12 15:19:25"
         },
         {
             "name": "webmozart/console",

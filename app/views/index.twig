@@ -1,0 +1,27 @@
+{% extends 'layout.twig' %}
+
+{% set pageTitle = 'Home' %}
+
+{% block content %}
+<div id="page" class="container" ng-controller="mainCtrl">
+    <div class="page-header">
+        <h1>
+            Beanstalkd Admin
+            <small>Beanstalkd administration and monitoring interface</small>
+        </h1>
+    </div>
+    <form class="well form-inline" action="/" method="get">
+        <label>
+            Server:
+            <input id="server" name="server" type="text" ng-model="server">
+        </label>
+        <label class="checkbox">
+            <input id="poll" type="checkbox" ng-model="refresh"> refresh every
+        </label>
+        <label>
+            <input id="pollInterval" name="pollInterval" type="number" ng-disabled="!refresh" ng-model="refreshInterval"> seconds
+        </label>
+        <button id="parametersApply" type="submit" class="btn btn-primary pull-right">Apply</button>
+    </form>
+</div>
+{% endblock %}

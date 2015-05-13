@@ -1,25 +1,11 @@
 <?php
 
-defined('APPLICATION_PATH')
-    || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
+require __DIR__.'/../vendor/autoload.php';
 
-defined('PUBLIC_PATH')
-    || define('PUBLIC_PATH', realpath(dirname(__FILE__)));
+defined('APP_PATH') or define('APP_PATH', realpath(__DIR__.'/../app/'));
+defined('APP_ENV') or define('APP_ENV', getenv('APP_ENV') ?: 'development');
 
-define('APPLICATION_ENV', 'production');
 
-// Add the library/ path to the include_path
-set_include_path(implode(PATH_SEPARATOR, array(
-    realpath(APPLICATION_PATH . '/../library'),
-    get_include_path(),
-)));
+$app = require APP_PATH.'/bootstrap.php';
 
-require_once dirname(__FILE__) . '/../vendor/autoload.php';
-
-$application = new Zend_Application(
-    APPLICATION_ENV,
-    APPLICATION_PATH . '/configs/application.ini'
-);
-
-$application->bootstrap()
-            ->run();
+$app->run();

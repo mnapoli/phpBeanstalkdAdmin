@@ -17,11 +17,19 @@
     "require": {
         "php": ">=5.4",
         "alexbilbie/proton": "~1.1",
+        "components/angular.js": "~1.3",
+        "components/jquery": "~2.1",
         "pda/pheanstalk": "~3.0",
         "puli/asset-plugin":"~1.0",
         "puli/cli": "~1.0",
+        "puli/twig-extension":"~1.0",
         "twbs/bootstrap": "~3.3",
         "twig/twig": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BeanstalkdAdmin\\": "src/"
+        }
     },
     "extra": {
         "branch-alias": {

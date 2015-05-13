@@ -1,4 +1,5 @@
 .puli/
 .vagrant/
-public/assets/
+public/assets
+public/vendor
 vendor/
